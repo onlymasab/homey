@@ -1,17 +1,34 @@
 [versions]
-agp = "8.9.2"
-kotlin = "2.0.0"
-compose = "1.8.0"
+agp = "8.10.1"
+kotlin = "2.0.21"
+compose = "1.8.2"
 compose-material3 = "1.3.2"
 androidx-activity-compose = "1.10.1"
 google-services = "4.4.2"
-navigation = "2.8.9"
+navigation = "2.9.0"
 hilt = "2.56.1"
 hilt-navigation-compose = "1.2.0"
 core-splashscreen = "1.0.1"
 play-services-auth = "21.3.0"
 room = "2.7.1"
-ksp = "2.0.0-1.0.24"
+ksp = "2.0.21-1.0.27"
+firebase-app-distribution = "5.1.1"
+supabase = "3.1.4" # replace with the actual latest version
+ktor = "3.1.1"
+androidx-credentials = "1.6.0-alpha02"
+googleid = "1.1.1"
+coil = "3.2.0"
+androidx-material-icons-extended = "1.7.8"
+retrofit = "3.0.0"
+gms = "21.3.0"
+google-maps = "6.6.0"
+play-service-map = "19.2.0"
+datastore = "1.1.7"
+coroutines = "1.10.2"
+okhttp = "4.12.0"
+gson = "2.10.1"
+generativeai = "0.9.0"
+coroutines-version = "1.7.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -30,6 +47,40 @@ play-services-auth = { group = "com.google.android.gms", name = "play-services-a
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+compose-ui-google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "compose" }
+supabase-bom = { group = "io.github.jan-tennert.supabase", name = "bom", version.ref = "supabase" }
+supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt", version.ref = "supabase" }
+supabase-auth = { group = "io.github.jan-tennert.supabase", name = "auth-kt", version.ref = "supabase" }
+supabase-realtime = { group = "io.github.jan-tennert.supabase", name = "realtime-kt", version.ref = "supabase" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-timeout = { group = "io.ktor", name = "ktor-client-plugins", version.ref = "ktor" } # <-- Important for your crash
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "androidx-credentials" }
+androidx-credentials-play-services = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "androidx-credentials" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil" }
+material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-material-icons-extended" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "gms" }
+google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps"}
+play-services-map = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "play-service-map"}
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+datastore-preferences-rxjava2 = { module = "androidx.datastore:datastore-preferences-rxjava2", version.ref = "datastore" }
+datastore-preferences-rxjava3 = { module = "androidx.datastore:datastore-preferences-rxjava3", version.ref = "datastore" }
+datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastore" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+google-generativeai = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "generativeai" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines-version" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -41,3 +92,5 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
+firebase-app-distribution = { id = "com.google.firebase.appdistribution", version.ref = "firebase-app-distribution" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

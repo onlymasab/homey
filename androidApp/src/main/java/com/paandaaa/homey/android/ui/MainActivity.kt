@@ -7,6 +7,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.paandaaa.homey.android.ui.navigation.AppNavGraph
 import com.paandaaa.homey.android.ui.navigation.Screen
+import com.paandaaa.homey.android.ui.theme.HomeyTheme
 import com.paandaaa.homey.android.ui.viewmodel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,11 +19,14 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             val authViewModel: AuthViewModel = hiltViewModel()
 
-            AppNavGraph(
-                navController = navController,
-                startDestination = Screen.Splash.route,
-                isAuthenticated = authViewModel.isAuthenticated
-            )
+            HomeyTheme {
+                AppNavGraph(
+                    navController = navController,
+                    startDestination = Screen.Splash.route,
+                    authViewModel = authViewModel
+                )
+            }
+
         }
     }
 }
